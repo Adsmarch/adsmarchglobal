@@ -19,9 +19,25 @@ useSeoMeta({
   ogImageAlt: 'AdsMarch | AI-Powered. Expert-Led. One-Stop Global Growth'
 })
 
-const { $pb } = useNuxtApp()
+useHead({
+  script: [
+    {
+      innerHTML: `
+        window.omnisend = window.omnisend || [];
+        omnisend.push(["brandID", "6af191aa714bb4bfe9142baf"]);
+        omnisend.push(["track", "$pageViewed"]);
+        !function(){var e=document.createElement("script");
+        e.type="text/javascript",e.async=!0,
+        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+        var t=document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)}();
+      `,
+      type: 'text/javascript',
+    }
+  ]
+})
 
-// 控制弹窗开闭的状态（全局共享）
+const { $pb } = useNuxtApp()
 const { isOpen, close } = useContactModal()
 
 const handleFormSubmit = async (formData) => {
@@ -31,11 +47,6 @@ const handleFormSubmit = async (formData) => {
     alert('Thank you! Your enquiry has been submitted successfully. Our expert will contact you soon.')
     close()
   } catch (error) {
-    // 打印 PocketBase 返回的详细错误对象和错误信息
-    //console.error('表单提交失败详情：', error)
-    //console.error('错误响应数据：', error.response)
-    
-    // 把具体的错误原因弹窗提示出来（方便排查）
     alert(`Submission failed: ${error.message || 'Unknown error'}`)
   }
 }

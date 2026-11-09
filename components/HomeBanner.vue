@@ -45,9 +45,12 @@
           </p>
 
           <div class="mt-6 lg:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-            <button class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-4 rounded-[80px] bg-[#1D5FE0] hover:bg-[#1441B8] text-white font-bold  transition-all transform leading-none min-h-[40px]">
-              Customize Your Growth Plan
-            </button>
+            <NuxtLink 
+                to="/customization" 
+                class="inline-flex items-center justify-center text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-4 rounded-[80px] bg-[#1D5FE0] hover:bg-[#1441B8] text-white font-bold transition-all transform leading-none min-h-[40px] cursor-pointer"
+              >
+                Customize Your Growth Plan
+            </NuxtLink>
             <button 
               @click="open()" 
               class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-[15px] rounded-[80px] bg-white hover:bg-[#CCE0FF] border border-[#1D5FE0] text-[#1D5FE0] font-bold  transition-all transform leading-none min-h-[40px] cursor-pointer"
