@@ -14,19 +14,5 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
-  },
-  booster: {
-    detection: {
-      performance: true,
-      browserSupport: true,
-      battery: false, 
-    },
-
-    optimizeSSR: {
-      cleanPreloads: true,
-      inlineStyles: true
-    },
-
-    targetFormats: ['webp', 'jpg']
   }
 })
