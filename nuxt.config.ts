@@ -4,8 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@vueuse/motion/nuxt',
-    'nuxt-booster'
+    '@vueuse/motion/nuxt'
   ],
   css: ['~/assets/css/main.css'],
   app: {
