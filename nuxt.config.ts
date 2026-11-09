@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    'nuxt-booster'
   ],
   css: ['~/assets/css/main.css'],
   app: {
@@ -13,5 +14,19 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
+  },
+  booster: {
+    detection: {
+      performance: true,
+      browserSupport: true,
+      battery: false, 
+    },
+
+    optimizeSSR: {
+      cleanPreloads: true,
+      inlineStyles: true
+    },
+
+    targetFormats: ['webp', 'jpg']
   }
 })

@@ -1,15 +1,14 @@
 <template>
-  <header class="sticky top-0 z-50 bg-black text-white shadow-[0_2px_8px_0_#5258701F]">
-    <div class="w-full px-[15px] md:px-[40px] xl:px-[120px] h-[72px] xl:h-[96px] flex items-center justify-between gap-4">
+  <header class="sticky top-0 z-50 bg-white text-[#627293] shadow-[0_1px_2px_0_#E9EBF1]">
+    <div class="w-full px-[15px] md:px-[32px] xl:px-[64px] h-[64px] xl:h-[80px] flex items-center justify-between gap-4 max-w-site mx-auto">
       
-      <!-- 替换 NuxtLinkLocale 为标准的 NuxtLink -->
       <NuxtLink to="/" class="flex items-center shrink-0">
-        <img src="/logo.svg" alt="AdsMarch Logo" class="h-6 xl:h-10 w-auto" />
+        <img src="/logo.svg" alt="AdsMarch Logo" class="h-6 xl:h-9 w-auto" />
       </NuxtLink>
 
-      <div class="flex items-center space-x-4 xl:space-x-8 2xl:gap-[120px] xl:gap-[40px] h-full">
+      <div class="flex items-center space-x-4 xl:space-x-8 2xl:gap-[64px] xl:gap-[32px] h-full">
         
-        <nav class="hidden xl:flex items-center space-x-6 2xl:space-x-10 h-full">
+        <nav class="hidden lg:flex items-center space-x-1 h-full">
           <div 
             v-for="(item, index) in navList" 
             :key="index" 
@@ -18,39 +17,30 @@
             <NuxtLink 
               v-if="!item.children || item.children.length === 0" 
               :to="item.path" 
-              class="group/nav flex items-center space-x-1.5 cursor-pointer transition"
+              class="flex items-center px-4 py-2 rounded-full text-[13px] 2xl:text-[14px] transition-all duration-200"
+              :class="isItemActive(item) ? 'bg-[#E1EDFE] text-[#0043FF] font-bold' : 'text-[#627293] hover:text-[#0043FF] hover:bg-[#E1EDFE] hover:[text-shadow:_0.6px_0_0_currentColor]'"
             >
-              <span class="w-[5px] h-[12px] -skew-x-[15deg] transition-colors duration-200"
-                :class="isItemActive(item) ? 'bg-[#0043FF]' : 'bg-[#454C5F] group-hover/nav:bg-[#0043FF]'"></span>
-              <span class="text-[16px] 2xl:text-[20px] whitespace-nowrap font-[400] transition-colors duration-200"
-                :class="isItemActive(item) ? 'text-[#0043FF]' : 'text-white group-hover/nav:text-[#0043FF]'">
-                {{ item.title }}
-              </span>
+              {{ item.title }}
             </NuxtLink>
 
             <div 
               v-else 
-              class="group/nav flex items-center space-x-1.5 cursor-pointer transition"
+              class="flex items-center px-4 py-2 rounded-full text-[13px] 2xl:text-[14px] transition-all duration-200"
+              :class="isItemActive(item) ? 'bg-[#EAF1FC] text-[#0043FF] font-bold' : 'text-[#627293] hover:text-[#0043FF] hover:bg-[#E1EDFE] hover:[text-shadow:_0.6px_0_0_currentColor]'"
             >
-              <span class="w-[5px] h-[12px] -skew-x-[15deg] transition-colors duration-200"
-                :class="isItemActive(item) ? 'bg-[#0043FF]' : 'bg-[#454C5F] group-hover/nav:bg-[#0043FF]'"></span>
-              <span class="text-[16px] 2xl:text-[20px] whitespace-nowrap font-[400] transition-colors duration-200"
-                :class="isItemActive(item) ? 'text-[#0043FF]' : 'text-white group-hover/nav:text-[#0043FF]'">
-                {{ item.title }}
-              </span>
+              {{ item.title }}
             </div>
 
             <div 
               v-if="item.children && item.children.length > 0"
-              class="absolute top-full left-0 -ml-6 w-60 bg-[#131416] backdrop-blur-md py-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl"
+              class="absolute top-full left-0 w-52 bg-white border border-gray-100 py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl rounded-xl"
             >
               <NuxtLink 
                 v-for="(sub, subIdx) in item.children" 
                 :key="subIdx"
                 :to="sub.path"
-                class="flex items-center px-6 py-2.5 text-sm xl:text-base 2xl:text-[18px] text-white hover:text-[#0043FF] transition group/sub gap-2.5"
+                class="flex items-center px-5 py-2.5 text-[14px] text-[#627293] hover:text-[#0043FF] hover:bg-[#E1EDFE] transition"
               >
-                <span class="w-[5px] h-[12px] bg-[#454C5F] -skew-x-[15deg] group-hover/sub:bg-[#0043FF] transition-colors duration-200"></span>
                 <span>{{ sub.title }}</span>
               </NuxtLink>
             </div>
@@ -58,39 +48,40 @@
         </nav>
 
         <div class="flex items-center space-x-3 xl:space-x-6 shrink-0 h-full">
-          <NuxtLink 
-            to="/contact" 
-            class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 xl:px-6 xl:py-3 text-sm xl:text-base 2xl:text-[20px] font-semibold bg-[#0043FF] text-white rounded hover:bg-[#103C93] transition whitespace-nowrap h-[40px]"
+          <button 
+            @click="open()" 
+            class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 text-[14px] font-bold bg-[#1D5FE0] text-white rounded-[80px] hover:bg-[#1441B8] transition whitespace-nowrap h-[36px] cursor-pointer"
           >
-            联系我们
-            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" class="w-1.5 h-3">
-              <path d="M5.99207 6.0069L2.54386 12L0 12L3.45219 6L0 -2.62268e-07L2.54386 -1.51073e-07L5.99207 5.9931L6 5.9931L5.99605 6L6 6.0069L5.99207 6.0069Z" fill="white"/>
-            </svg>
-          </NuxtLink>
+            Talk To A Growth Expert
+          </button>
         </div>
 
         <button 
           @click="isMobileMenuOpen = !isMobileMenuOpen"
-          class="xl:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
+          class="xl:hidden text-[#627293] hover:text-[#0043FF] focus:outline-none"
           aria-label="Toggle Menu"
         >
-          <svg v-if="!isMobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 4.5H21M3 12H21M3 19.5H15" stroke="white" stroke-width="2"/>
+          <svg  v-if="!isMobileMenuOpen"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18.6338V20H3V18.6338H15ZM21 11.3169V12.6831H3V11.3169H21ZM21 4V5.3662H3V4H21Z" fill="#627293"/>
           </svg>
+
           <svg v-else width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 3.92847L12.9285 12L21 20.0715L20.0715 21L12 12.9285L3.92847 21L3 20.0715L11.0715 12L3 3.92847L3.92847 3L12 11.0715L20.0715 3L21 3.92847Z" fill="white"/>
+            <path d="M21 3.92847L12.9285 12L21 20.0715L20.0715 21L12 12.9285L3.92847 21L3 20.0715L11.0715 12L3 3.92847L3.92847 3L12 11.0715L20.0715 3L21 3.92847Z" fill="#111218"/>
           </svg>      
         </button>
 
-        <NuxtLink 
-          to="/contact" 
-          class="sm:hidden inline-flex items-center leading-none justify-center gap-1 px-2 text-sm font-semibold bg-[#0043FF] text-white hover:opacity-80 transition active:scale-95 whitespace-nowrap h-[24px] rounded-[2px]"
+        <button 
+          @click="open()" 
+          class="sm:hidden inline-flex items-center justify-center p-2.5 bg-[#0043FF] text-white cursor-pointer w-[40px] h-[28px] rounded-[80px]"
+          aria-label="Contact"
         >
-          联系我们
-          <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.99471 4.0046L1.6959 8L2.38419e-07 8L2.30146 4L2.38419e-07 -1.74846e-07L1.6959 -1.00715e-07L3.99471 3.9954L4 3.9954L3.99737 4L4 4.0046L3.99471 4.0046Z" fill="white"/>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.03569 0.844823C6.20064 -0.183159 9.08084 -0.296883 11.4702 0.63523C13.8867 1.57793 15.8323 3.60942 15.9902 6.84827C16.1497 10.1193 14.3338 12.2907 12.1875 13.6832C10.0538 15.0675 7.53892 15.7251 6.11381 16L5.92485 15.018C7.29814 14.7531 9.66719 14.1257 11.6436 12.8434C13.6073 11.5693 15.128 9.69231 14.9917 6.89712C14.8561 4.11539 13.2186 2.39121 11.107 1.5674C8.96829 0.733121 6.37489 0.841961 4.4644 1.74915L4.03569 0.844823ZM2.63482 3.07511C1.32118 4.4405 0.775499 6.21169 1.08453 7.84151C1.39116 9.45839 2.55344 11.0079 4.80376 11.9142L4.43022 12.8424C1.90381 11.825 0.479886 10.0202 0.102117 8.02814C-0.273173 6.04915 0.398221 3.95705 1.91412 2.38135L2.63482 3.07511Z" fill="white"/>
+            <path d="M6.05375 7.77897V6.25359H4.80376V7.77897H6.05375Z" fill="white"/>
+            <path d="M8.58053 7.77897V6.25359H7.33053V7.77897H8.58053Z" fill="white"/>
+            <path d="M11.0805 7.84151V6.31612H9.83052V7.84151H11.0805Z" fill="white"/>
           </svg>
-        </NuxtLink>
+        </button>
       </div>
     </div>
 
@@ -104,72 +95,65 @@
     >
       <div 
         v-if="isMobileMenuOpen" 
-        class="xl:hidden fixed inset-x-0 top-[72px] bottom-0 h-[calc(100vh-72px)] bg-[#131416] backdrop-blur-lg z-40 px-[15px] md:px-[40px] py-8 flex flex-col justify-between"
+        class="xl:hidden fixed inset-x-0 top-[64px] bottom-0 h-[calc(100vh-64px)] bg-white backdrop-blur-lg z-40 px-[20px] md:px-[40px] py-8 flex flex-col justify-between overflow-y-auto shadow-2xl"
       >
-        <div class="flex-1 overflow-y-auto min-h-0 pr-1 space-y-8 pb-10">
+        <div class="flex-1 space-y-6 pb-10">
           <div 
             v-for="(item, index) in navList" 
             :key="index"
-            class="space-y-8"
+            class="space-y-3 border-b border-[#E9EBF1] pb-4"
           >
             <NuxtLink 
               v-if="!item.children || item.children.length === 0"
               :to="item.path"
               @click="isMobileMenuOpen = false"
-              class="flex items-center justify-between text-base font-medium group cursor-pointer"
+              class="flex items-center justify-between text-lg font-medium text-[#111218]"
             >
-              <div class="flex items-center gap-[6px] text-[20px]">
-                <span class="w-[5px] h-[12px] -skew-x-[15deg] transition-colors duration-200"
-                  :class="isItemActive(item) ? 'bg-[#0043FF]' : 'bg-[#454C5F] group-hover:bg-[#0043FF]'"></span>
-                <span class="transition-colors duration-200"
-                  :class="isItemActive(item) ? 'text-[#0043FF]' : 'text-white group-hover:text-[#0043FF]'">{{ item.title }}</span>
-              </div>
+              <span :class="isItemActive(item) ? 'text-[#0043FF] font-semibold' : ''">{{ item.title }}</span>
             </NuxtLink>
+
             <div 
               v-else
               @click="toggleSubMenu(index)"
-              class="flex items-center justify-between text-base font-medium cursor-pointer"
+              class="flex items-center justify-between text-lg font-medium text-[#111218] cursor-pointer"
             >
-              <div class="flex items-center gap-[6px] text-[20px]">
-                <span 
-                  class="w-[5px] h-[12px] -skew-x-[15deg] transition-colors duration-200"
-                  :class="openSubMenuIndices.includes(index) ? 'bg-[#0043FF]' : 'bg-[#454C5F]'"
-                ></span>
-                <span 
-                  class="transition-colors duration-200"
-                  :class="openSubMenuIndices.includes(index) ? 'text-[#0043FF]' : 'text-white'"
-                >
-                  {{ item.title }}
-                </span>
-              </div>
-
+              <span :class="isItemActive(item) ? 'text-[#0043FF] font-semibold' : ''">{{ item.title }}</span>
               <span>
-                <svg v-if="openSubMenuIndices.includes(index)" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 11.25V12.75H3V11.25H21Z" fill="white"/>
+                <svg v-if="openSubMenuIndices.includes(index)" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                
-                <svg v-else width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.4815 11.2264H3L3.01991 12.7513H18.5L14.7943 17H16.505L21 12.0109L16.4851 7H14.8142L18.4815 11.2264Z" fill="white"/>
+                <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
             </div>
 
             <div 
               v-if="item.children && openSubMenuIndices.includes(index)" 
-              class="ml-4 space-y-6"
+              class="ml-4 space-y-3 pt-2"
             >
               <NuxtLink 
                 v-for="(sub, subIdx) in item.children" 
                 :key="subIdx"
                 :to="sub.path"
                 @click="isMobileMenuOpen = false"
-                class="flex items-center gap-2 text-base text-white hover:text-[#0043FF] transition-colors"
+                class="block text-base text-[#627293] hover:text-[#0043FF]"
               >
-                <span class="w-[5px] h-[8px] bg-[#454C5F] -skew-x-[15deg] transition-colors duration-200"></span>
-                <span>{{ sub.title }}</span>
+                {{ sub.title }}
               </NuxtLink>
             </div>
           </div>
+
+          <!--  -->
+          <!-- <div class="pt-4">
+            <NuxtLink 
+              to="/contact"
+              @click="isMobileMenuOpen = false"
+              class="w-full py-3.5 bg-[#0043FF] text-white text-center font-semibold rounded-full block shadow-md"
+            >
+              Talk To A Growth Expert
+            </NuxtLink>
+          </div> -->
         </div>
       </div>
     </Transition>
@@ -180,6 +164,8 @@
 import { ref, watch, onUnmounted } from 'vue'
 
 const route = useRoute()
+
+const { open } = useContactModal()
 
 const isItemActive = (item) => {
   const match = (path) => {
@@ -223,28 +209,27 @@ const toggleSubMenu = (index) => {
   }
 }
 
-// 导航数据，文案已直接写死为中文
 const navList = [
   {
-    title: '服务中心',
+    title: 'Solutions',
     children: [
-      { title: 'App 推广', path: '/services/app' },
-      { title: '电商营销', path: '/services/ecommerce' },
-      { title: '创意设计', path: '/services/design' },
-      { title: 'KOL 营销', path: '/services/kol' },
-      { title: '企业培训', path: '/services/training' },
-      { title: '整合营销', path: '/services/marketing' },
-      { title: 'SEO 优化', path: '/services/seo' }
+      { title: 'App Promotion', path: '/services/app' },
+      { title: 'E-commerce Marketing', path: '/services/ecommerce' },
+      { title: 'Creative Design', path: '/services/design' },
+      { title: 'KOL Marketing', path: '/services/kol' },
+      { title: 'Enterprise Training', path: '/services/training' },
+      { title: 'Integrated Marketing', path: '/services/marketing' },
+      { title: 'SEO Optimization', path: '/services/seo' }
     ]
   },
-  { title: '洞察方案', path: '/insights' },
-  { title: '关于我们', path: '/about' },
-  { title: '荣誉奖项', path: '/awards' },
+  { title: 'CaseStudies', path: '/insights' },
+  { title: 'OurApproach', path: '/about' },
+  { title: 'Technology', path: '/awards' },
   {
-    title: '加入我们',
+    title: 'Resources',
     children: [
-      { title: '招贤纳士', path: '/careers' },
-      { title: '热招岗位', path: '/jobs' }
+      { title: 'Careers', path: '/careers' },
+      { title: 'Job Openings', path: '/jobs' }
     ]
   }
 ]

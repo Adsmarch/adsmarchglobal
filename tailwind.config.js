@@ -6,11 +6,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['OPPOSans', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
       },
       spacing: {
-        'safe-pc': '120px',
+        'safe-pc': '64px',
         'safe-m': '15px',
+      },
+      maxWidth: {
+        'site': '1440px',
       }
     },
   },
