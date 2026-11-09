@@ -19,23 +19,6 @@ useSeoMeta({
   ogImageAlt: 'AdsMarch | AI-Powered. Expert-Led. One-Stop Global Growth'
 })
 
-useHead({
-  script: [
-    {
-      innerHTML: `
-        window.omnisend = window.omnisend || [];
-        omnisend.push(["brandID", "6af191aa714bb4bfe9142baf"]);
-        omnisend.push(["track", "$pageViewed"]);
-        !function(){var e=document.createElement("script");
-        e.type="text/javascript",e.async=!0,
-        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
-        var t=document.getElementsByTagName("script")[0];
-        t.parentNode.insertBefore(e,t)}();
-      `,
-      type: 'text/javascript',
-    }
-  ]
-})
 
 const { $pb } = useNuxtApp()
 const { isOpen, close } = useContactModal()
