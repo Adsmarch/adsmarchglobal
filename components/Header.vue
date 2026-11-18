@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white text-[#627293] shadow-[0_1px_2px_0_#E9EBF1]">
+  <header class="sticky top-0 z-[60] bg-white text-[#627293] shadow-[0_1px_2px_0_#E9EBF1]">
     <div class="w-full px-[15px] md:px-[32px] xl:px-[64px] h-[64px] xl:h-[80px] flex items-center justify-between gap-4 max-w-site mx-auto">
       
       <NuxtLink to="/" class="flex items-center shrink-0">
@@ -95,7 +95,7 @@
     >
       <div 
         v-if="isMobileMenuOpen" 
-        class="xl:hidden fixed inset-x-0 top-[64px] bottom-0 h-[calc(100vh-64px)] bg-white backdrop-blur-lg z-40 px-[20px] md:px-[40px] py-8 flex flex-col justify-between overflow-y-auto shadow-2xl"
+        class="xl:hidden fixed inset-x-0 top-[64px] bottom-0 h-[calc(100vh-64px)] bg-white backdrop-blur-lg z-[60] px-[20px] md:px-[40px] py-8 flex flex-col justify-between overflow-y-auto shadow-2xl"
       >
         <div class="flex-1 space-y-6 pb-10">
           <div 
@@ -223,7 +223,7 @@ const navList = [
     ]
   },
   { title: 'CaseStudies', path: '/insights' },
-  { title: 'OurApproach', path: '/about' },
+  { title: 'OurApproach', path: '/about-us' },
   { title: 'Technology', path: '/awards' },
   {
     title: 'Resources',

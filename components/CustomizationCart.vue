@@ -21,7 +21,7 @@
             </div>
             <span :class="['group-hover:underline text-[13px] md:text-[16px]', selectedEngine ? 'text-[#1763F5] font-bold' : 'text-[#A9B3C6]']">Choose Your Growth Plan</span>
           </div>
-          <div :class="['h-[2px] w-8 md:w-auto md:flex-1 mx-3 md:mx-4 shrink-0', selectedEngine ? 'bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)]' : 'bg-[#A9B3C6]']"></div>
+          <div :class="['h-[2px] w-8 md:w-auto md:flex-1 mx-3 md:mx-4 shrink-0', selectedEngine ? 'bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)]' : 'bg-[linear-gradient(#A9B3C6_100%)]']"></div>
           
           <div @click="scrollToSection('market-section')" class="flex items-center space-x-3 cursor-pointer group shrink-0">
             <div :class="[
