@@ -170,53 +170,55 @@
                 />
               </div>
 
-              <div class="bg-[#FAFCFE] p-4 rounded-2xl border border-[#E9EBF1]" v-if="allSelectedTags.length > 0">
-                <span class="text-[14px] md:text-[16px] text-[#627293] block mb-3">Selected Markets</span>
-                <div class="flex flex-wrap gap-2">
-                  <span 
-                    v-for="tag in allSelectedTags" 
-                    :key="tag"
-                    class="inline-flex items-center bg-[#E1EDFE] text-[#1763F5] px-4 py-3 rounded-[80px] text-[14px] font-bold max-h-[32px]"
-                  >
-                    {{ tag }}
-                    <button @click="removeTag(tag)" class="ml-2 text-[#627293] hover:text-red-500">×</button>
-                  </span>
-                </div>
-              </div>
-
-              <div class="space-y-4 max-h-[400px] overflow-y-auto pr-2">
-                <div 
-                  v-for="region in filteredRegions" 
-                  :key="region.name"
-                  class="border border-gray-200 rounded-2xl overflow-hidden bg-white"
-                >
-                  <div class="bg-[#CCE0FF] px-4 py-3 flex items-center justify-between border-b border-gray-100">
-                    <label class="flex items-center space-x-3 cursor-pointer">
-                      <input 
-                        type="checkbox" 
-                        :checked="isRegionFullySelected(region)"
-                        @change="toggleRegion(region)"
-                        class="w-4 h-4 text-[#1763F5] rounded border-gray-300 focus:ring-[#1763F5]"
-                      />
-                      <span class="font-bold text-sm text-[#1763F5]">{{ region.name }}</span>
-                    </label>
-                    <span class="font-bold text-[12px] text-[#627293]">{{ region.countries.length }} Markets</span>
-                  </div>
-
-                  <div class="p-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <label 
-                      v-for="country in region.countries" 
-                      :key="country"
-                      class="flex items-center space-x-2 text-[14px] text-[#627293] cursor-pointer"
+              <div class="bg-[#FAFCFE] border border-[#E9EBF1] p-3  md:p-4 rounded-[20px]">
+                <div class="bg-[#FAFCFE] py-2 pb-6 mb-6 border-b border-[#E9EBF1]" v-if="allSelectedTags.length > 0">
+                  <span class="text-[14px] md:text-[16px] text-[#627293] block mb-3">Selected Markets</span>
+                  <div class="flex flex-wrap gap-2">
+                    <span 
+                      v-for="tag in allSelectedTags" 
+                      :key="tag"
+                      class="inline-flex items-center bg-[#E1EDFE] text-[#1763F5] px-4 py-3 rounded-[80px] text-[14px] font-bold max-h-[32px]"
                     >
-                      <input 
-                        type="checkbox" 
-                        v-model="selectedCountries[region.name]" 
-                        :value="country"
-                        class="w-4 h-4 text-[#1763F5] rounded border-[#A9B3C6] focus:ring-[#1763F5]"
-                      />
-                      <span class="truncate">{{ country }}</span>
-                    </label>
+                      {{ tag }}
+                      <button @click="removeTag(tag)" class="ml-2 text-[#627293] hover:text-red-500">×</button>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="space-y-4 !mt-0 max-h-[480px] overflow-y-auto  custom-market-scrollbar overflow-hidden rounded-[8px]">
+                  <div 
+                    v-for="region in filteredRegions" 
+                    :key="region.name"
+                    class="border border-gray-200 overflow-hidden bg-white"
+                  >
+                    <div class="bg-[#CCE0FF] px-4 py-3 flex items-center justify-between border-b border-gray-100">
+                      <label class="flex items-center space-x-3 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          :checked="isRegionFullySelected(region)"
+                          @change="toggleRegion(region)"
+                          class="w-4 h-4 text-[#1763F5] rounded border-[#A9B3C6] focus:ring-[#1763F5]"
+                        />
+                        <span class="font-bold text-sm text-[#1763F5]">{{ region.name }}</span>
+                      </label>
+                      <span class="font-bold text-[12px] text-[#627293]">{{ region.countries.length }} Markets</span>
+                    </div>
+
+                    <div class="p-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      <label 
+                        v-for="country in region.countries" 
+                        :key="country"
+                        class="flex items-center space-x-2 text-[14px] text-[#627293] cursor-pointer"
+                      >
+                        <input 
+                          type="checkbox" 
+                          v-model="selectedCountries[region.name]" 
+                          :value="country"
+                          class="w-4 h-4 text-[#1763F5] rounded border-[#A9B3C6] focus:ring-[#1763F5]"
+                        />
+                        <span class="truncate">{{ country }}</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1276,3 +1278,31 @@ const clearAll = () => {
   directServicesSelected.value = []
 }
 </script>
+<style scoped>
+.custom-market-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-market-scrollbar::-webkit-scrollbar-button,
+.custom-market-scrollbar::-webkit-scrollbar-button:single-button,
+.custom-market-scrollbar::-webkit-scrollbar-button:vertical:decrement,
+.custom-market-scrollbar::-webkit-scrollbar-button:vertical:increment {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.custom-market-scrollbar::-webkit-scrollbar-track {
+  background: #E9EBF1;
+  border-radius: 8px;
+}
+
+.custom-market-scrollbar::-webkit-scrollbar-thumb {
+  background: #A9B3C6;
+  border-radius: 24px;
+}
+
+.custom-market-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #627293;
+}
+</style>
