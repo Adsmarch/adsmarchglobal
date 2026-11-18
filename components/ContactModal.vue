@@ -5,7 +5,7 @@
       
       <button 
         @click="$emit('close')" 
-        class="md:hidden absolute -top-8 right-0 z-50cursor-pointer"
+        class="md:hidden absolute -top-9 right-0 z-50 cursor-pointer"
         aria-label="Close"
       >
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@
       <div class="p-5 md:p-10 overflow-y-auto w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         
         <div class="flex justify-between items-start pb-6 md:pb-10 border-b border-[#E9EBF1]">
-          <h2 class="text-[20px] md:text-[32px] font-bold text-[#1D5FE0] w-full md:w-[70%] leading-[1.25]">
+          <h2 class="text-[20px] md:text-[32px] font-bold text-[#1763F5] w-full md:w-[70%] leading-[1.25]">
             Tell Us The Details, So We Can Make The First Conversation More Productive.
           </h2>
           <button 
@@ -35,46 +35,46 @@
           
           <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-3">
             <div>
-              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2 ">Name <span class="text-[#1D5FE0]">*</span></label>
+              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2 ">Name <span class="text-[#1763F5]">*</span></label>
               <input 
                 v-model="form.name" 
                 type="text" 
                 required 
                 placeholder="Your Full Name" 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
 
             <div>
-              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Company Name <span class="text-[#1D5FE0]">*</span></label>
+              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Company Name <span class="text-[#1763F5]">*</span></label>
               <input 
                 v-model="form.company" 
                 type="text" 
                 required 
                 placeholder="Full Company Name" 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-3">
             <div>
-              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Work Email <span class="text-[#1D5FE0]">*</span></label>
+              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Work Email <span class="text-[#1763F5]">*</span></label>
               <input 
                 v-model="form.email" 
                 type="email" 
                 required 
                 placeholder="Name@Company.Com" 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
             <div>
-              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Phone Number <span class="text-[#1D5FE0]">*</span></label>
+              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Phone Number <span class="text-[#1763F5]">*</span></label>
               <input 
                 v-model="form.phone" 
                 type="tel" 
                 required 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
           </div>
@@ -86,18 +86,18 @@
                 v-model="form.website" 
                 type="text" 
                 placeholder="Https://" 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
 
             <div>
-              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Country / Region <span class="text-[#1D5FE0]">*</span></label>
+              <label class="block text-[14px] md:text-[16px] text-[#627293] leading-[1.5] mb-2">Country / Region <span class="text-[#1763F5]">*</span></label>
               <input 
                 v-model="form.country" 
                 type="text" 
                 required 
                 placeholder="Country / Region" 
-                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
+                class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px] text-[#111218]"
               />
             </div>
           </div>
@@ -108,7 +108,7 @@
               <div class="relative">
                 <select 
                   v-model="form.industry" 
-                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
+                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
                   :class="{ 'text-[#A9B3C6]': !form.industry }"
                 >
                   <option value="" disabled>Please Select</option>
@@ -126,7 +126,7 @@
               <div class="relative">
                 <select 
                   v-model="form.objective" 
-                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
+                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
                   :class="{ 'text-[#A9B3C6]': !form.objective }"
                 >
                   <option value="" disabled>Please Select</option>
@@ -153,7 +153,7 @@
               <div class="relative">
                 <select 
                   v-model="form.budget"
-                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
+                  class="w-full px-4 md:py-[11px] py-[7px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white md:text-[14px] text-[12px] text-[#111218] appearance-none cursor-pointer"
                   :class="{ 'text-[#A9B3C6]': !form.budget }"
                 >
                   <option value="" disabled>Please Select</option>
@@ -176,7 +176,7 @@
               v-model="form.other_content" 
               rows="3" 
               placeholder="Your Current Stage, The Channels You Already Run, The Problem You Most Want To Solve, And So On" 
-              class="w-full px-[15px] md:py-[11px] py-[15px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1D5FE0] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px]  text-[#111218] resize-none"
+              class="w-full px-[15px] md:py-[11px] py-[15px] bg-[#FAFCFE] border border-[#E9EBF1] md:rounded-[8px] rounded-[4px] focus:outline-none focus:border-[#1763F5] focus:bg-white placeholder-[#A9B3C6] md:placeholder:text-[14px] placeholder:text-[12px]  text-[#111218] resize-none"
             ></textarea>
           </div>
 
@@ -187,7 +187,7 @@
           <div class="!mt-[32px] w-full">
             <button 
               type="submit" 
-              class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-3 lg:py-[15px] rounded-[80px] bg-white hover:bg-[#CCE0FF] border border-[#1D5FE0] text-[#1D5FE0] font-bold transition-all transform leading-none min-h-[40px] cursor-pointer w-full md:w-auto"
+              class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-3 lg:py-[15px] rounded-[80px] bg-white hover:bg-[#CCE0FF] border border-[#1763F5] text-[#1763F5] font-bold transition-all transform leading-none min-h-[40px] cursor-pointer w-full md:w-auto"
             >
               <span class="md:inline-block block">Send My Enquiry And</span> Have A Consultant Contact Me
             </button>

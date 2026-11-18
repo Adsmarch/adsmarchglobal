@@ -43,7 +43,7 @@
           >
             <button 
               @click="handleConsultation"
-              class="text-[14px] xl:text-[16px] px-8 lg:px-9 py-3 lg:py-4 rounded-[80px] bg-[#1D5FE0] hover:bg-[#1441B8] text-white font-bold transition-all transform leading-none min-h-[40px]"
+              class="text-[14px] xl:text-[16px] px-8 lg:px-9 py-3 lg:py-4 rounded-[80px] bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] hover:bg-[linear-gradient(87.86deg,#0A2C85_100%)] text-white font-bold transition-all transform leading-none min-h-[40px]"
             >
               Book A Growth Consultation
             </button>

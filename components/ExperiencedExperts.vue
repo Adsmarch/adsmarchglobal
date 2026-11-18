@@ -10,7 +10,7 @@
       >
         <h2 class="text-[28px] md:text-[36px] lg:text-[48px] font-bold text-[#111218] leading-[1.2] mb-2 md:mb-3">
           Experienced Experts. <br />
-          <span class="text-[#1D5FE0]">Trusted Expertise.</span>
+          <span class="text-[#1763F5]">Trusted Expertise.</span>
         </h2>
         <p class="text-[15px] md:text-[16px] text-[#627293] leading-[1.6] mb-4 md:mb-6 lg:mb-8">
           AdsMarch's Advertising Experts Bring Over A Decade Of Experience In Digital Advertising. Our Core Experts Come From Fortune Global 500 Companies And Leading Brands, With Deep Expertise In Global Advertising Platforms, Extensive Hands-On Experience In Campaign Management, And Strong Capabilities In Precision Campaign Optimization.
@@ -18,7 +18,7 @@
 
         <button 
           @click="handleMeetTeam"
-          class="inline-block px-6 py-[15px] rounded-[80px] border border-[#1D5FE0] text-[#1D5FE0] font-bold text-[14px] md:text-[16px] hover:bg-[#CCE0FF] transition-colors duration-300 select-none leading-[100%]"
+          class="inline-block px-6 py-[15px] rounded-[80px] border border-[#1763F5] text-[#1763F5] font-bold text-[14px] md:text-[16px] hover:bg-[#CCE0FF] transition-colors duration-300 select-none leading-[100%]"
         >
           Meet Our Team
         </button>
@@ -109,8 +109,8 @@
       </div>
 
       <div class="xl:absolute xl:bottom-0 xl:right-[64px] grid grid-cols-2 gap-3 sm:gap-6 mt-8 xl:mt-0 z-20">
-        <div class="bg-[#E1EDFE] p-5 rounded-[20px] border border-[#E9EBF1] shadow-[2px_3px_6px_#A9B3C652] w-full lg:w-[256px] transition-transform duration-300 hover:-translate-y-2">
-          <div class="text-[36px] md:text-[64px] font-bold text-[#1D5FE0] leading-[125%] mb-2">
+        <div class="bg-[#FFFFFF] p-5 rounded-[20px] border border-[#E9EBF1] shadow-[2px_3px_6px_#A9B3C652] w-full lg:w-[256px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[2px_3px_6px_0px_#6253FC52]">
+          <div class="text-[36px] md:text-[64px] font-bold text-[#1763F5] leading-[125%] mb-2 bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] bg-clip-text text-transparent">
             {{ displayExpCount }}+
           </div>
           <div class="text-[14px] md:text-[18px] text-[#627293] leading-[150%]">
@@ -118,8 +118,8 @@
           </div>
         </div>
 
-        <div class="bg-[#E1EDFE] p-5 rounded-[20px] border border-[#E9EBF1] shadow-[2px_3px_6px_#A9B3C652] w-full lg:w-[256px] transition-transform duration-300 hover:-translate-y-2">
-          <div class="text-[36px] md:text-[64px] font-bold text-[#1D5FE0] leading-[125%] mb-2">
+        <div class="bg-[#FFFFFF] p-5 rounded-[20px] border border-[#E9EBF1] shadow-[2px_3px_6px_#A9B3C652] w-full lg:w-[256px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[2px_3px_6px_0px_#6253FC52]">
+          <div class="text-[36px] md:text-[64px] font-bold text-[#1763F5] leading-[125%] mb-2 bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] bg-clip-text text-transparent">
             {{ displayBrandsCount.toLocaleString() }}+
           </div>
           <div class="text-[14px] md:text-[18px] text-[#627293] leading-[150%]">

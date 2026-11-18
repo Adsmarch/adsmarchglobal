@@ -21,12 +21,12 @@
         :initial="{ opacity: 0, y: 30 }"
         :visible="{ opacity: 1, y: 0, transition: { duration: 800, type: 'spring' } }"
       >
-        <span class="text-[14px] md:text-[20px] font-bold text-[#1D5FE0] md:mb-5 mb-3 leading-[1.25]">
+        <span class="text-[14px] md:text-[20px] font-bold text-[#1763F5] md:mb-5 mb-3 leading-[1.25]">
           AI + Expert + Global Growth.
         </span>
         <h2 class="text-[28px] md:text-[48px] leading-[1.25] font-bold text-[#111218] md:mb-5 mb-3">
           Growth Plan Builder<br />
-          <span class="text-[#1D5FE0]">Available Now</span>
+          <span class="text-[#1763F5]">Available Now</span>
         </h2>
 
         <p class="text-[16px] md:text-[18px] leading-[1.5] md:text-[#111218] text-[#627293] md:mb-5 mb-3 max-w-[640px]">
@@ -46,7 +46,7 @@
         <div>
           <NuxtLink 
             to="/" 
-            class="inline-flex items-center justify-center text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-4 rounded-[80px] bg-[#1D5FE0] hover:bg-[#1441B8] text-white font-bold transition-all transform leading-none min-h-[40px] cursor-pointer w-[65%] md:w-auto"
+            class="inline-flex items-center justify-center text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-4 rounded-[80px] bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] hover:bg-[linear-gradient(#0A2C85_100%)] text-white font-bold transition-all transform leading-none min-h-[40px] cursor-pointer w-[65%] md:w-auto"
           >
             <span>← Back to home</span>
           </NuxtLink>

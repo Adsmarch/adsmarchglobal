@@ -1,3 +1,4 @@
+
 /* assets/css/main.css */
 :root {
   --header-height: 64px;
@@ -7,4 +8,16 @@
   :root {
     --header-height: 80px;
   }
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('~/assets/font/Manrope.woff2') format('woff2'),
+       url('~/assets/font/Manrope.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: 'Manrope', sans-serif;
 }

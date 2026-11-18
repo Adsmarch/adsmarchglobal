@@ -14,7 +14,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mx-auto">
         <div 
-          class="bg-white rounded-[12px] md:rounded-[20px] p-6 lg:p-6 lg:pb-8 border border-[#CCE0FF] shadow-[2px_3px_6px_0px_#9BC2FF52] lg:shadow-none lg:border-[#E9EBF1] flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:border-[#CCE0FF] lg:hover:shadow-[2px_3px_6px_0px_#9BC2FF52]"
+          class="bg-white rounded-[12px] md:rounded-[20px] p-6 lg:p-6 lg:pb-8 border border-[#CCE0FF] shadow-[2px_3px_6px_0px_#6253FC52] lg:shadow-none lg:border-[#E9EBF1] flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:border-[#CCE0FF] lg:hover:shadow-[2px_3px_6px_0px_#6253FC52]"
           v-motion
           :initial="{ opacity: 0, y: 50 }"
           :visible="{ opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }"
@@ -40,7 +40,7 @@
         </div>
 
         <div 
-          class="bg-white rounded-[12px] md:rounded-[20px] p-6 lg:p-6 lg:pb-8 border border-[#CCE0FF] shadow-[2px_3px_6px_0px_#9BC2FF52] lg:shadow-none lg:border-[#E9EBF1] flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:border-[#CCE0FF] lg:hover:shadow-[2px_3px_6px_0px_#9BC2FF52]"
+          class="bg-white rounded-[12px] md:rounded-[20px] p-6 lg:p-6 lg:pb-8 border border-[#CCE0FF] shadow-[2px_3px_6px_0px_#6253FC52] lg:shadow-none lg:border-[#E9EBF1] flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:border-[#CCE0FF] lg:hover:shadow-[2px_3px_6px_0px_#6253FC52]"
           v-motion
           :initial="{ opacity: 0, y: 50 }"
           :visible="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"

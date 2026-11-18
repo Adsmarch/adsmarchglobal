@@ -3,7 +3,7 @@
     <div class="w-full px-[15px] md:px-[32px] xl:px-[64px] h-[64px] xl:h-[80px] flex items-center justify-between gap-4 max-w-site mx-auto">
       
       <NuxtLink to="/" class="flex items-center shrink-0">
-        <img src="/logo.svg" alt="AdsMarch Logo" class="h-6 xl:h-9 w-auto" />
+        <img src="/logo.png" alt="AdsMarch Logo" class="h-6 xl:h-9 w-auto" />
       </NuxtLink>
 
       <div class="flex items-center space-x-4 xl:space-x-8 2xl:gap-[64px] xl:gap-[32px] h-full">
@@ -50,7 +50,7 @@
         <div class="flex items-center space-x-3 xl:space-x-6 shrink-0 h-full">
           <button 
             @click="open()" 
-            class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 text-[14px] font-bold bg-[#1D5FE0] text-white rounded-[80px] hover:bg-[#1441B8] transition whitespace-nowrap h-[36px] cursor-pointer"
+            class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 text-[14px] font-bold bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] text-white rounded-[80px] hover:bg-[linear-gradient(#0A2C85_100%)] transition whitespace-nowrap h-[36px] cursor-pointer"
           >
             Talk To A Growth Expert
           </button>
@@ -72,7 +72,7 @@
 
         <button 
           @click="open()" 
-          class="sm:hidden inline-flex items-center justify-center p-2.5 bg-[#0043FF] text-white cursor-pointer w-[40px] h-[28px] rounded-[80px]"
+          class="sm:hidden inline-flex items-center justify-center p-2.5 bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] text-white cursor-pointer w-[40px] h-[28px] rounded-[80px]"
           aria-label="Contact"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

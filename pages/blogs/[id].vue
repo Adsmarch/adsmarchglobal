@@ -2,7 +2,7 @@
   <div class="max-w-4xl mx-auto px-4 py-16">
     <button 
       @click="router.back()" 
-      class="mb-8 text-sm text-[#1D5FE0] hover:underline flex items-center gap-1"
+      class="mb-8 text-sm text-[#1763F5] hover:underline flex items-center gap-1"
     >
       &larr; Back
     </button>

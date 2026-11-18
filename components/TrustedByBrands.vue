@@ -8,7 +8,7 @@
         :visible="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
       >
         <h2 class="text-[28px] md:text-[32px] lg:text-[48px] font-bold text-[#111218] leading-[1.25]">
-          Trusted By Brands. <span class="text-[#1D5FE0] block md:inline-block">Driven By Growth.</span>
+          Trusted By Brands. <span class="text-[#1763F5] block md:inline-block">Driven By Growth.</span>
         </h2>
       </div>
 
@@ -71,7 +71,7 @@
             >
               <div 
                 class="w-full bg-white rounded-[12px] p-4 pb-6 border transition-all duration-300 flex flex-col justify-between cursor-pointer group"
-                :class="activeIndex === index ? 'border-[#CCE0FF] shadow-[2px_3px_6px_0px_#9BC2FF52]' : 'border-[#E9EBF1] shadow-none'"
+                :class="activeIndex === index ? 'border-[#CCE0FF] shadow-[2px_3px_6px_0px_#6253FC52]' : 'border-[#E9EBF1] shadow-none'"
                 @click="handleCardClick(item)"
               >
                 <div>
@@ -85,7 +85,9 @@
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 class="text-[18px] md:text-[22px] font-bold text-[#111218] line-clamp-2 mb-3 group-hover:text-[#1D5FE0] leading-[125%]">
+                  <h3 class="text-[18px] md:text-[22px] font-bold  line-clamp-3 mb-3 group-hover:text-[#1763F5] leading-[130%]"
+                  :class="activeIndex === index ? 'text-[#1763F5]' : 'text-[#111218]'"
+                  >
                     {{ item.title }}
                   </h3>
                   <p class="text-[14px] md:text-[16px] text-[#627293] leading-[150%] line-clamp-3 mb-6" v-html="item.shortdesc"></p>
@@ -110,7 +112,7 @@
           <div 
             v-for="(item, index) in blogList" 
             :key="item.id || index"
-            class="bg-white rounded-[20px] p-4 pb-6 border border-[#E9EBF1] shadow-none flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 cursor-pointer hover:border-[#CCE0FF] hover:shadow-[2px_3px_6px_0px_#9BC2FF52] group"
+            class="bg-white rounded-[20px] p-4 pb-6 border border-[#E9EBF1] shadow-none flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 cursor-pointer hover:border-[#CCE0FF] hover:shadow-[2px_3px_6px_0px_#6253FC52] group"
             @click="handleCardClick(item)"
             v-motion
             :initial="{ opacity: 0, y: 40 }"
@@ -127,7 +129,7 @@
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3 class="text-[24px] font-bold text-[#111218] line-clamp-2 mb-3 group-hover:text-[#1D5FE0] leading-[125%]">
+              <h3 class="text-[24px] font-bold text-[#111218] line-clamp-2 mb-3 group-hover:text-[#1763F5] leading-[125%]">
                 {{ item.title }}
               </h3>
               <p class="text-[16px] text-[#627293] leading-[150%] line-clamp-3 mb-6" v-html="item.shortdesc"></p>
@@ -151,7 +153,7 @@
       <div class="text-center">
         <button 
           @click="handleExploreMore"
-          class="inline-block px-6 py-[15px] rounded-[80px] border border-[#1D5FE0] text-[#1D5FE0] font-bold text-[14px] md:text-[16px] hover:bg-[#CCE0FF] transition-colors duration-300 select-none leading-[100%]"
+          class="inline-block px-6 py-[15px] rounded-[80px] border border-[#1763F5] text-[#1763F5] font-bold text-[14px] md:text-[16px] hover:bg-[#CCE0FF] transition-colors duration-300 select-none leading-[100%]"
         >
           Explore More
         </button>
@@ -227,6 +229,6 @@ onMounted(() => {
   border-radius: 50%;
 }
 .trusted-swiper .swiper-pagination-bullet-active {
-  background: #1D5FE0;
+  background: #1763F5;
 }
 </style>

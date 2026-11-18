@@ -7,6 +7,7 @@
       :is-open="isOpen" 
       @close="close"
       @submit="handleFormSubmit"/>
+      <FloatingWidget />
   </div>
 </template>
 <script setup>

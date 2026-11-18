@@ -1,11 +1,6 @@
 <template>
   <footer 
-    class="relative w-full pt-16 md:pt-16 overflow-hidden text-[#111218]"
-    :style="{
-      background: 'radial-gradient(93.54% 98.93% at 50% 108.27%, #1D5FE0 0%, #F0F5FF 100%)',
-      backdropFilter: 'blur(24px)',
-      boxShadow: '1px 2px 4px 0px #1D5FE01F'
-    }"
+    class="footer-container relative w-full pt-16 md:pt-16 overflow-hidden text-[#111218]"
   >
     <div class="max-w-site mx-auto px-[15px] md:px-[32px] lg:px-[64px] relative z-10 w-full">
       
@@ -18,17 +13,17 @@
         
         <div class="md:col-span-5 lg:col-span-6 flex flex-col items-start text-center sm:text-left">
           <div class="mb-6 mx-auto sm:mx-0">
-            <img src="/footer-icon.svg" alt="AdsMarch Logo" />
+            <img src="/footer-icon.png" alt="AdsMarch Logo" class="w-[88px] md:w-[103px]" />
           </div>
 
           <div class="text-[14px] md:text-[16px] text-[#627293] space-y-2 leading-[1.5] mx-auto sm:mx-0">
             <p>
-              <a href="mailto:Business@Adsmarch.Com" class="hover:text-[#1D5FE0] transition-colors">
+              <a href="mailto:Business@Adsmarch.Com" class="hover:text-[#1763F5] transition-colors">
                 Business@Adsmarch.Com
               </a>
             </p>
             <p>
-              <a href="tel:010-62956881" class="hover:text-[#1D5FE0] transition-colors">
+              <a href="tel:010-62956881" class="hover:text-[#1763F5] transition-colors">
                 010-6295 6881
               </a>
             </p>
@@ -43,72 +38,72 @@
           <div>
             <div 
               class="flex items-center justify-between font-bold text-[16px] cursor-pointer sm:cursor-default transition-colors duration-200"
-              :class="openMenus.capabilities ? 'text-[#1D5FE0]' : 'text-[#111218]'"
+              :class="openMenus.capabilities ? 'text-[#1763F5]' : 'text-[#111218]'"
               @click="toggleMenu('capabilities')"
             >
               <span>Capabilities</span>
               <span class="sm:hidden flex items-center">
                 <svg v-if="openMenus.capabilities" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.capabilities ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.capabilities ? '#1763F5' : '#627293'"/>
                 </svg>
                 <svg v-else width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.capabilities ? '#1D5FE0' : '#627293'"/>
-                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.capabilities ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.capabilities ? '#1763F5' : '#627293'"/>
+                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.capabilities ? '#1763F5' : '#627293'"/>
                 </svg>
               </span>
             </div>
             <ul class="space-y-4 text-[14px] text-[#627293] mt-6" :class="{ 'hidden sm:block': !openMenus.capabilities }">
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">App Growth & User Acquisition</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">E-Commerce Management & Growth</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">Creative Strategy & Production</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">Influencer & Creator Marketing</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">SEO / GEO</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">App Growth & User Acquisition</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">E-Commerce Management & Growth</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">Creative Strategy & Production</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">Influencer & Creator Marketing</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">SEO / GEO</a></li>
             </ul>
           </div>
 
           <div>
             <div 
               class="flex items-center justify-between font-bold text-[16px] cursor-pointer sm:cursor-default transition-colors duration-200"
-              :class="openMenus.solutions ? 'text-[#1D5FE0]' : 'text-[#111218]'"
+              :class="openMenus.solutions ? 'text-[#1763F5]' : 'text-[#111218]'"
               @click="toggleMenu('solutions')"
             >
               <span>Solutions</span>
               <span class="sm:hidden flex items-center">
                 <svg v-if="openMenus.solutions" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.solutions ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.solutions ? '#1763F5' : '#627293'"/>
                 </svg>
                 <svg v-else width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.solutions ? '#1D5FE0' : '#627293'"/>
-                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.solutions ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.solutions ? '#1763F5' : '#627293'"/>
+                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.solutions ? '#1763F5' : '#627293'"/>
                 </svg>
               </span>
             </div>
             <ul class="space-y-4 text-[14px] text-[#627293] mt-6" :class="{ 'hidden sm:block': !openMenus.solutions }">
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">APP Growth</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">E-Commerce Growth</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">APP Growth</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">E-Commerce Growth</a></li>
             </ul>
           </div>
 
           <div class="pb-12 sm:text-right">
             <div 
               class="flex items-center justify-between sm:justify-end font-bold text-[16px] cursor-pointer sm:cursor-default transition-colors duration-200"
-              :class="openMenus.company ? 'text-[#1D5FE0]' : 'text-[#111218]'"
+              :class="openMenus.company ? 'text-[#1763F5]' : 'text-[#111218]'"
               @click="toggleMenu('company')"
             >
               <span class="sm:order-2">Company</span>
               <span class="sm:hidden flex items-center">
                 <svg v-if="openMenus.company" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.company ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.company ? '#1763F5' : '#627293'"/>
                 </svg>
                 <svg v-else width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.company ? '#1D5FE0' : '#627293'"/>
-                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.company ? '#1D5FE0' : '#627293'"/>
+                  <path d="M17 9V10.3H3V9H17Z" :fill="openMenus.company ? '#1763F5' : '#627293'"/>
+                  <path d="M9.35 3V17H10.65V3H9.35Z" :fill="openMenus.company ? '#1763F5' : '#627293'"/>
                 </svg>
               </span>
             </div>
             <ul class="space-y-4 text-[14px] text-[#627293] mt-6" :class="{ 'hidden sm:block': !openMenus.company }">
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">Case</a></li>
-              <li><a href="#" class="hover:text-[#1D5FE0] transition-colors">About Us</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">Case</a></li>
+              <li><a href="#" class="hover:text-[#1763F5] transition-colors">About Us</a></li>
             </ul>
           </div>
 
@@ -125,32 +120,32 @@
         
         <div class="flex flex-wrap items-center justify-center md:justify-start md:gap-6 gap-3 md:text-[14px] md:text-[#627293] text-[12px] text-[#CCE0FF]">
           <span>© AdsMarch, 2026</span>
-          <a href="#" class="hover:text-[#1D5FE0] transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-[#1D5FE0] transition-colors">Terms Of Use</a>
+          <a href="#" class="hover:text-[#1763F5] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#1763F5] transition-colors">Terms Of Use</a>
         </div>
 
         <div class="flex items-center gap-5 md:text-[#627293] text-[#CCE0FF]">
-          <a href="#" aria-label="LinkedIn" class="hover:text-[#1D5FE0] transition-colors">
+          <a href="#" aria-label="LinkedIn" class="hover:text-[#1763F5] transition-colors">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.176 25.2H6.06094V11.4649H10.176V25.2ZM25.1846 25.2H21.0695V17.9065C21.0695 16.0225 20.404 15.0505 19.0729 15.0505C18.5976 15.0195 18.1273 15.1625 17.749 15.4531C17.3706 15.7437 17.11 16.1621 17.0154 16.6309V25.2H12.9003C12.9003 25.2 12.9612 12.8617 12.9003 11.4649H16.3558V14.1997H16.4167C16.8209 13.4821 17.4115 12.8882 18.1255 12.4813C18.8396 12.0745 19.6502 11.87 20.4709 11.8897C21.1051 11.8411 21.7419 11.9422 22.3303 12.1849C22.9187 12.4277 23.4424 12.8053 23.8595 13.2877C24.7997 14.451 25.2743 15.9245 25.1905 17.4205V25.2H25.1846ZM10.237 8.06055C10.2278 8.61637 9.99977 9.1459 9.6027 9.5332C9.20564 9.9205 8.67194 10.134 8.11848 10.1269C7.56602 10.134 7.03321 9.92134 6.63632 9.53533C6.23943 9.14932 6.01068 8.62132 6 8.06655C6.00912 7.51074 6.23719 6.9812 6.63425 6.5939C7.03131 6.2066 7.56501 5.99311 8.11848 6.00017C8.67194 5.99311 9.20564 6.2066 9.6027 6.5939C9.99977 6.9812 10.2278 7.51074 10.237 8.06655V8.06055Z" fill="currentColor"/>
             </svg>
           </a>
-          <a href="#" aria-label="YouTube" class="hover:text-[#1D5FE0] transition-colors">
+          <a href="#" aria-label="YouTube" class="hover:text-[#1763F5] transition-colors">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 9.3335C16 9.3335 22.4864 9.33386 24.1044 9.73172C24.9963 9.95061 25.6979 10.5959 25.9371 11.4157C26.37 12.9005 26.37 16.0002 26.37 16.0002C26.37 16.0002 26.3701 19.0995 25.9371 20.5846C25.816 20.9911 25.583 21.3611 25.2611 21.6566C24.9393 21.952 24.5399 22.163 24.1033 22.2686C22.494 22.6646 16.062 22.6668 16 22.6668C16 22.6668 9.51365 22.6665 7.89563 22.2686C7.45908 22.1626 7.05966 21.952 6.73786 21.6566C6.41596 21.3608 6.18303 20.9911 6.06186 20.5846C5.62973 19.0995 5.63 16.0002 5.63 16.0002C5.63 16.0002 5.62984 12.9005 6.06186 11.4157C6.18294 11.0092 6.41596 10.6392 6.73786 10.3437C7.05965 10.0484 7.45901 9.83734 7.89563 9.73172C9.50584 9.33578 15.9379 9.33351 16 9.3335ZM13.8798 18.8148L19.2986 16.0002L13.8798 13.1866V18.8148Z" fill="currentColor"/>
             </svg>
           </a>
-          <a href="#" aria-label="X" class="hover:text-[#1D5FE0] transition-colors">
+          <a href="#" aria-label="X" class="hover:text-[#1763F5] transition-colors">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.4636 7H24.3771L18.012 14.6246L25.5 25H19.637L15.0448 18.7074L9.7904 25H6.87519L13.6832 16.8446L6.5 7H12.5119L16.6628 12.7517L21.4636 7ZM20.4411 23.1723H22.0555L11.6346 8.7317H9.90223L20.4411 23.1723Z" fill="currentColor"/>     
             </svg>
           </a>
-          <a href="#" aria-label="Facebook" class="hover:text-[#1D5FE0] transition-colors">
+          <a href="#" aria-label="Facebook" class="hover:text-[#1763F5] transition-colors">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.7295 21.3108C12.7295 19.6407 12.7235 17.9708 12.7351 16.301C12.7371 16.0196 12.6627 15.9314 12.3989 15.9431C11.9115 15.964 11.4229 15.941 10.9349 15.953C10.7374 15.9584 10.6647 15.8999 10.6667 15.6763C10.6767 14.6344 10.6757 13.5919 10.6677 12.5496C10.666 12.3491 10.7224 12.2832 10.9122 12.2878C11.4112 12.2999 11.9112 12.2729 12.4092 12.2992C12.6978 12.3142 12.7578 12.2048 12.7515 11.9188C12.7341 11.1259 12.7341 10.3316 12.7505 9.53838C12.7701 8.56988 13.0137 7.66552 13.5541 6.87797C14.2378 5.88064 15.2098 5.42472 16.3313 5.37129C17.4832 5.31679 18.638 5.34707 19.7912 5.33353C19.9518 5.33175 20 5.39301 19.9993 5.55971C19.9942 6.61368 19.9929 7.66802 20 8.72198C20.0016 8.90934 19.9442 8.96668 19.7718 8.96384C19.217 8.95458 18.6624 8.9592 18.108 8.96063C17.3697 8.96312 16.9277 9.36847 16.8817 10.1489C16.8448 10.7744 16.8717 11.4038 16.8581 12.031C16.853 12.2543 16.9774 12.239 17.1158 12.239C17.9588 12.2376 18.8017 12.2479 19.6446 12.2326C19.8922 12.228 19.9736 12.2889 19.9456 12.5671C19.8394 13.6143 19.7484 14.6632 19.6644 15.7134C19.6453 15.9502 19.544 15.9954 19.3448 15.9919C18.68 15.9808 18.0142 15.9844 17.3488 15.9887C16.8708 15.9919 16.917 15.9139 16.917 16.4343C16.9148 19.703 16.9108 22.9722 16.9237 26.241C16.925 26.586 16.8424 26.6719 16.5225 26.6659C15.3804 26.6434 14.2376 26.6423 13.0954 26.6666C12.7735 26.6734 12.7205 26.5568 12.7231 26.2502C12.7355 24.6035 12.7295 22.9572 12.7295 21.3108Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
             </svg>
           </a>
-          <a href="#" aria-label="TikTok" class="hover:text-[#1D5FE0] transition-colors">
+          <a href="#" aria-label="TikTok" class="hover:text-[#1763F5] transition-colors">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.4114 10.6755C20.3408 9.97285 19.5678 8.84913 19.3269 7.53909C19.2748 7.2559 19.2462 6.96472 19.2462 6.6665H15.8289L15.8233 20.4469C15.7658 21.99 14.5038 23.2286 12.9563 23.2286C12.4754 23.2286 12.0224 23.1077 11.6238 22.8964C10.7095 22.4121 10.0839 21.4477 10.0839 20.338C10.0839 18.7441 11.3726 17.4474 12.9563 17.4474C13.252 17.4474 13.5354 17.4965 13.8038 17.581V14.885V14.0706C13.5261 14.0325 13.244 14.0089 12.9563 14.0089C9.4882 14.0089 6.66663 16.848 6.66663 20.3377C6.66663 22.4789 7.72995 24.3737 9.3518 25.5194C10.3733 26.241 11.6162 26.6665 12.9563 26.6665C16.4244 26.6665 19.246 23.8273 19.246 20.3377V13.3504C20.586 14.3184 22.2281 14.8888 24 14.8888V12.2163V11.4502C23.0458 11.4502 22.1568 11.1647 21.4114 10.6755Z" fill="currentColor"/>
             </svg>
@@ -218,3 +213,15 @@ const toggleMenu = (key) => {
   }
 }
 </script>
+<style scoped>
+.footer-container {
+   background: url('../assets/image/footer_bg.png') no-repeat 100% 100%;
+    background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .footer-container {
+    background: url('../assets/image/footer_bg_m.png') no-repeat 100% 100%;
+    background-size: cover;
+  }
+}
+</style>
