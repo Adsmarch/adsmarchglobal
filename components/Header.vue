@@ -3,7 +3,7 @@
     <div class="w-full px-[15px] md:px-[32px] xl:px-[64px] h-[64px] xl:h-[80px] flex items-center justify-between gap-4 max-w-site mx-auto">
       
       <NuxtLink to="/" class="flex items-center shrink-0">
-        <img src="/logo.png" alt="AdsMarch Logo" class="h-6 xl:h-9 w-auto" />
+        <img src="/logo.png" alt="AdsMarch Logo" class="h-6 xl:h-[28px] w-auto" />
       </NuxtLink>
 
       <div class="flex items-center space-x-4 xl:space-x-8 2xl:gap-[64px] xl:gap-[32px] h-full">
@@ -33,27 +33,35 @@
 
             <div 
               v-if="item.children && item.children.length > 0"
-              class="absolute top-full left-0 w-52 bg-white border border-gray-100 py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl rounded-xl"
+              class="absolute top-[88px] left-0 w-max whitespace-nowrap bg-[#FFFFFF8F] p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-[2px_3px_6px_0_#A9B3C652] backdrop-blur-[16px] rounded-[20px] space-y-3"
             >
               <NuxtLink 
                 v-for="(sub, subIdx) in item.children" 
                 :key="subIdx"
                 :to="sub.path"
-                class="flex items-center px-5 py-2.5 text-[14px] text-[#627293] hover:text-[#0043FF] hover:bg-[#E1EDFE] transition"
+                class="flex items-center gap-3 px-3.5 py-3 bg-white rounded-[12px] text-[16px] text-[#627293] hover:text-[#FFFFFF] hover:font-bold hover:bg-[#1763F5] transition group/sub"
               >
+                <span v-if="sub.svg" class="w-8 h-8 rounded-[8px] bg-[#E1EDFE] border border-[#E9EBF1] group-hover/sub:bg-white flex items-center justify-center shrink-0">
+                  <img :src="sub.svg" alt="" class="w-5 h-5 object-contain" />
+                </span>
                 <span>{{ sub.title }}</span>
               </NuxtLink>
             </div>
           </div>
         </nav>
 
-        <div class="flex items-center space-x-3 xl:space-x-6 shrink-0 h-full">
+        <div class="flex items-center space-x-3 xl:space-x-2 shrink-0 h-full">
           <button 
             @click="open()" 
-            class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 text-[14px] font-bold bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] text-white rounded-[80px] hover:bg-[linear-gradient(#0A2C85_100%)] transition whitespace-nowrap h-[36px] cursor-pointer"
-          >
-            Talk To A Growth Expert
+            class="hidden md:flex items-center px-4 py-2 rounded-full text-[13px] 2xl:text-[14px] transition-all duration-200 text-[#627293] hover:text-[#0043FF] hover:bg-[#E1EDFE] hover:[text-shadow:_0.6px_0_0_currentColor]">
+            connect
           </button>
+          <NuxtLink 
+              to="/customization" 
+              class="hidden sm:inline-flex items-center leading-none justify-center gap-2 px-4 py-2 text-[14px] font-bold bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] text-white rounded-[80px] hover:bg-[linear-gradient(#0A2C85_100%)] transition whitespace-nowrap h-[36px] cursor-pointer"
+            >
+            Build your Growth Plan
+          </NuxtLink>
         </div>
 
         <button 
@@ -95,65 +103,80 @@
     >
       <div 
         v-if="isMobileMenuOpen" 
-        class="xl:hidden fixed inset-x-0 top-[64px] bottom-0 h-[calc(100vh-64px)] bg-white backdrop-blur-lg z-[60] px-[20px] md:px-[40px] py-8 flex flex-col justify-between overflow-y-auto shadow-2xl"
+        class="xl:hidden fixed inset-x-0 top-[64px] bottom-0 h-[calc(100vh-64px)] bg-[#EDF3FF] backdrop-blur-lg z-[60] px-[20px] md:px-[40px] py-8 flex flex-col justify-between overflow-y-auto shadow-2xl"
       >
-        <div class="flex-1 space-y-6 pb-10">
+        <!-- 导航列表区域 -->
+        <div class="flex-1 space-y-4 pb-10">
           <div 
             v-for="(item, index) in navList" 
             :key="index"
-            class="space-y-3 border-b border-[#E9EBF1] pb-4"
           >
+            <!-- 没有子级的导航项：默认显示右箭头 -->
             <NuxtLink 
               v-if="!item.children || item.children.length === 0"
               :to="item.path"
               @click="isMobileMenuOpen = false"
-              class="flex items-center justify-between text-lg font-medium text-[#111218]"
+              class="flex items-center justify-between text-[16px] space-y-6 py-2"
+              :class="isItemActive(item) ? 'text-[#1763F5]' : 'text-[#627293]'"
             >
-              <span :class="isItemActive(item) ? 'text-[#0043FF] font-semibold' : ''">{{ item.title }}</span>
+              <span>{{ item.title }}</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="!m-0">
+                <path d="M14 9.47888V10.5211L6.95211 17L6 15.9578L12.4801 10L6 4.04224L6.95211 3L14 9.47888Z" fill="#627293"/>
+              </svg>
             </NuxtLink>
 
+            <!-- 有子级的导航项：折叠显示 +，展开显示蓝色减号 - 且标题变蓝 -->
             <div 
               v-else
               @click="toggleSubMenu(index)"
-              class="flex items-center justify-between text-lg font-medium text-[#111218] cursor-pointer"
+              class="flex items-center justify-between text-[16px] font-medium cursor-pointer py-2"
+              :class="openSubMenuIndices.includes(index) || isItemActive(item) ? 'text-[#1763F5]' : 'text-[#627293]'"
             >
-              <span :class="isItemActive(item) ? 'text-[#0043FF] font-semibold' : ''">{{ item.title }}</span>
-              <span>
-                <svg v-if="openSubMenuIndices.includes(index)" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <span>{{ item.title }}</span>
+              <span :class="openSubMenuIndices.includes(index) ? 'text-[#1763F5]' : 'text-[#627293]'">
+                <svg v-if="openSubMenuIndices.includes(index)" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 9V10.3H3V9H17Z" fill="#1763F5"/>
                 </svg>
-                <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg v-else width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5833 3V9.56535H17V10.732H10.5833V17H9.41667V10.732H3V9.56535H9.41667V3H10.5833Z" fill="#627293"/>
                 </svg>
               </span>
             </div>
 
+            <!-- 子菜单 -->
             <div 
               v-if="item.children && openSubMenuIndices.includes(index)" 
-              class="ml-4 space-y-3 pt-2"
+              class="space-y-2 pt-2"
             >
               <NuxtLink 
                 v-for="(sub, subIdx) in item.children" 
                 :key="subIdx"
                 :to="sub.path"
                 @click="isMobileMenuOpen = false"
-                class="block text-base text-[#627293] hover:text-[#0043FF]"
+                class="flex items-center gap-3 p-2 h-10 rounded-[8px] bg-white border border-[#E9EBF1]  text-[14px] text-[#627293]"
               >
-                {{ sub.title }}
+                <span v-if="sub.svg" class="w-6 h-6 rounded-[4px] bg-[#E1EDFE] flex items-center justify-center shrink-0">
+                  <img :src="sub.svg" alt="" class="w-[15px] h-[15px] object-contain" />
+                </span>
+                <span>{{ sub.title }}</span>
               </NuxtLink>
             </div>
           </div>
-
-          <!--  -->
-          <!-- <div class="pt-4">
-            <NuxtLink 
-              to="/contact"
-              @click="isMobileMenuOpen = false"
-              class="w-full py-3.5 bg-[#0043FF] text-white text-center font-semibold rounded-full block shadow-md"
-            >
-              Talk To A Growth Expert
-            </NuxtLink>
-          </div> -->
+        </div>
+        <div class="pt-4 space-y-3 shrink-0">
+          <button 
+            @click="open(); isMobileMenuOpen = false" 
+            class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-[15px] rounded-[80px] bg-transparent hover:bg-[#CCE0FF] border border-[#1763F5] text-[#1763F5] font-bold transition-all transform leading-none min-h-[40px] cursor-pointer w-full"
+          >
+            Connect
+          </button>
+          <NuxtLink 
+            to="/customization"
+            @click="isMobileMenuOpen = false"
+            class="w-full text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-[15px] bg-[linear-gradient(87.86deg,#3D5BF9_4.79%,#6253FC_100%)] text-white text-center font-bold rounded-[80px] block"
+          >
+            Build Your Growth Plan
+          </NuxtLink>
         </div>
       </div>
     </Transition>
@@ -162,6 +185,12 @@
 
 <script setup>
 import { ref, watch, onUnmounted } from 'vue'
+
+import appSvg from '../assets/image/menu/app.svg'
+import ecommerceSvg from '../assets/image/menu/ecommerce.svg'
+import creativeSvg from '../assets/image/menu/creative.svg'
+import influencerSvg from '../assets/image/menu/marketing.svg'
+import seoGeoSvg from '../assets/image/menu/seo-geo.svg'
 
 const route = useRoute()
 
@@ -213,24 +242,21 @@ const navList = [
   {
     title: 'Solutions',
     children: [
-      { title: 'App Promotion', path: '/services/app' },
-      { title: 'E-commerce Marketing', path: '/services/ecommerce' },
-      { title: 'Creative Design', path: '/services/design' },
-      { title: 'KOL Marketing', path: '/services/kol' },
-      { title: 'Enterprise Training', path: '/services/training' },
-      { title: 'Integrated Marketing', path: '/services/marketing' },
-      { title: 'SEO Optimization', path: '/services/seo' }
+      { title: 'APP Growth',svg:appSvg, path: '/services/app-growth' },
+      { title: 'E-commerce Growth',svg:ecommerceSvg,  path: '/services/ecommerce-growth' }
     ]
   },
-  { title: 'CaseStudies', path: '/insights' },
-  { title: 'OurApproach', path: '/about-us' },
-  { title: 'Technology', path: '/awards' },
-  {
-    title: 'Resources',
+  { title: 'Capabilities',
     children: [
-      { title: 'Careers', path: '/careers' },
-      { title: 'Job Openings', path: '/jobs' }
+      { title: 'App Growth & User Acquisition',svg:appSvg, path: '/services/app-growth-acquisition' },
+      { title: 'E-commerce Management & Growth',svg:ecommerceSvg, path: '/services/ecommerce-management-growth' },
+      { title: 'Creative Strategy & Production',svg:creativeSvg, path: '/services/creative-strategy-production' },
+      { title: 'Influencer & Creator Marketing',svg:influencerSvg, path: '/services/influencer-creator-marketing' },
+      { title: 'SEO / GEO',svg:seoGeoSvg, path: '/services/seo-geo' }
     ]
-  }
+  },
+  { title: 'Case', path: '/case' },
+  { title: 'Resource', path: '/article' },
+  { title: 'About', path: '/about-us' }
 ]
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div v-if="isOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4">
+  <div v-if="isOpen" class="fixed inset-0 z-[61] flex items-center justify-center bg-black/30 backdrop-blur-sm p-4">
     
     <div class="relative w-full max-w-[1040px] bg-white md:rounded-[20px] rounded-[12px] my-8 max-h-[82vh] flex flex-col shadow-2xl">
       
       <button 
         @click="$emit('close')" 
-        class="md:hidden absolute -top-9 right-0 z-50 cursor-pointer"
+        class="md:hidden absolute -top-9 right-0 z-[61] cursor-pointer"
         aria-label="Close"
       >
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -53,7 +53,7 @@
             </NuxtLink>
             <button 
               @click="open()" 
-              class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-[15px] rounded-[80px] bg-white hover:bg-[#CCE0FF] border border-[#1763F5] text-[#1763F5] font-bold  transition-all transform leading-none min-h-[40px] cursor-pointer"
+              class="text-[14px] xl:text-[16px] px-5 lg:px-9 py-2 lg:py-[15px] rounded-[80px] bg-transparent hover:bg-[#CCE0FF] border border-[#1763F5] text-[#1763F5] font-bold  transition-all transform leading-none min-h-[40px] cursor-pointer"
             >
               Talk To A Growth Expert
             </button>

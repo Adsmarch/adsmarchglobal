@@ -6,7 +6,7 @@
         :class="[
           'w-full bg-[#FFFFFF] mb-12 transition-all duration-300',
           isSticky 
-            ? 'fixed top-[63px] left-0 right-0  lg:left-1/2 lg:-translate-x-1/2 bg-white md:shadow-lg z-50 border border-[#E9EBF1]' 
+            ? 'fixed top-[63px] left-0 right-0  lg:left-1/2 lg:-translate-x-1/2 xl:top-[78px] bg-white md:shadow-lg z-50 border border-[#E9EBF1]' 
             : ''
         ]"
       >

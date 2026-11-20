@@ -208,7 +208,7 @@ const handleCardClick = (item) => {
 }
 
 const handleExploreMore = () => {
-  router.push('/blogs')
+  router.push('/case')
 }
 
 onMounted(() => {
@@ -216,11 +216,11 @@ onMounted(() => {
 })
 </script>
 
-<style>
-.trusted-swiper .swiper-pagination {
+<style scoped>
+.trusted-swiper :deep(.swiper-pagination) {
   bottom: 0px !important;
 }
-.trusted-swiper .swiper-pagination-bullet {
+.trusted-swiper :deep(.swiper-pagination-bullet) {
   background: #CCE0FF;
   opacity: 1;
   width: 6px;
@@ -228,7 +228,7 @@ onMounted(() => {
   transition: all 0.3s ease;
   border-radius: 50%;
 }
-.trusted-swiper .swiper-pagination-bullet-active {
-  background: #1763F5;
+.trusted-swiper :deep(.swiper-pagination-bullet-active) {
+  background: #6253FC;
 }
 </style>

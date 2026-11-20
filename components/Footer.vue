@@ -101,9 +101,10 @@
                 </svg>
               </span>
             </div>
-            <ul class="space-y-4 text-[14px] text-[#627293] mt-6" :class="{ 'hidden sm:block': !openMenus.company }">
-              <li><a href="#" class="hover:text-[#1763F5] transition-colors">Case</a></li>
-              <li><a href="#" class="hover:text-[#1763F5] transition-colors">About Us</a></li>
+            <ul class="space-y-4 text-[14px] text-[#627293] mt-6 text-left" :class="{ 'hidden sm:block': !openMenus.company }">
+              <li><a href="/case" class="hover:text-[#1763F5] transition-colors">Case</a></li>
+              <li><a href="/article" class="hover:text-[#1763F5] transition-colors">Resource</a></li>
+              <li><a href="/about-us" class="hover:text-[#1763F5] transition-colors">About Us</a></li>
             </ul>
           </div>
 
